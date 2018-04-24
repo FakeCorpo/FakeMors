@@ -9,7 +9,7 @@ namespace FakeMors
     static class Program
     {
         /// <summary>
-        /// Główny punkt wejścia dla aplikacji, chyba z kompa.
+        /// Główny punkt wejścia dla aplikacji, chybaxd.
         /// </summary>
         [STAThread]
         static void Main()
