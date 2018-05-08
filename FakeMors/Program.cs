@@ -8,8 +8,6 @@ namespace FakeMors
 {
     static class Program
     {
-        //TEST
-
         /// <summary>
         /// Główny punkt wejścia dla aplikacji.
         /// </summary>
