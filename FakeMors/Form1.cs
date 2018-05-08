@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NAudio.Wave;
 
 namespace FakeMors
 {
@@ -15,11 +17,53 @@ namespace FakeMors
         SoundData soundData;
         MorseDictionary MorseDictionary;
 
+        // TODO zrobić osobną klasę na nagrywanie
+        // ----------------------------------------------------------------------------------------------------------
+        private string outputFolder;
+        private string outputFilePath;
+        private WaveFileWriter writer;
+        private WaveInEvent waveIn;
+        private bool closing;
+        // ----------------------------------------------------------------------------------------------------------
+
+
+
+
         public Form1()
         {
             InitializeComponent();
             MorseDictionary = new MorseDictionary();
             soundData = new SoundData();
+
+
+            outputFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "NAudio");
+            Directory.CreateDirectory(outputFolder);
+            outputFilePath = Path.Combine(outputFolder, "recorded.wav");
+            writer = null;
+            closing = false;
+            waveIn = new WaveInEvent();
+
+            waveIn.DataAvailable += (s, a) =>
+            {
+                writer.Write(a.Buffer, 0, a.BytesRecorded);
+                if (writer.Position > waveIn.WaveFormat.AverageBytesPerSecond * 30)
+                {
+                    waveIn.StopRecording();
+                }
+            };
+
+            waveIn.RecordingStopped += (s, a) =>
+            {
+                writer?.Dispose();
+                writer = null;
+                buttonRecord.Enabled = true;
+                buttonStop.Enabled = false;
+                if (closing)
+                {
+                    waveIn.Dispose();
+                }
+            };
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,6 +85,20 @@ namespace FakeMors
         {
             SoundControl soundControl = new SoundControl(soundData);
             soundControl.ShowDialog(this);
+        }
+
+
+        public void ButtonRecordClick()
+        {
+            writer = new WaveFileWriter(outputFilePath, waveIn.WaveFormat);
+            waveIn.StartRecording();
+            buttonRecord.Enabled = false;
+            buttonStop.Enabled = true;
+
+        }
+        public void ButtonStopClick()
+        {
+            waveIn.StopRecording();
         }
     }
 }

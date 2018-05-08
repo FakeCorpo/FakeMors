@@ -27,7 +27,7 @@
         /// jej zawartości w edytorze kodu.
         /// </summary>
         private void InitializeComponent()
-        {
+        {         
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -40,6 +40,8 @@
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dźwiękToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonRecord = new System.Windows.Forms.Button();
+            this.buttonStop = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,9 +137,27 @@
             // dźwiękToolStripMenuItem
             // 
             this.dźwiękToolStripMenuItem.Name = "dźwiękToolStripMenuItem";
-            this.dźwiękToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dźwiękToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.dźwiękToolStripMenuItem.Text = "Dźwięk";
             this.dźwiękToolStripMenuItem.Click += new System.EventHandler(this.dźwiękToolStripMenuItem_Click);
+            // 
+            // buttonRecord
+            // 
+            this.buttonRecord.Location = new System.Drawing.Point(141, 27);
+            this.buttonRecord.Name = "buttonRecord";
+            this.buttonRecord.Size = new System.Drawing.Size(75, 23);
+            this.buttonRecord.TabIndex = 9;
+            this.buttonRecord.Text = "Nagrywaj";
+            this.buttonRecord.UseVisualStyleBackColor = true;         
+            // 
+            // buttonStop
+            // 
+            this.buttonStop.Location = new System.Drawing.Point(222, 27);
+            this.buttonStop.Name = "buttonStop";
+            this.buttonStop.Size = new System.Drawing.Size(75, 23);
+            this.buttonStop.TabIndex = 10;
+            this.buttonStop.Text = "Stop";
+            this.buttonStop.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -145,6 +165,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(694, 587);
+            this.Controls.Add(this.buttonStop);
+            this.Controls.Add(this.buttonRecord);
             this.Controls.Add(this.ButtonPlayBeep);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.richTextBox2);
@@ -163,7 +185,10 @@
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
+            // ----------------------------------------------------------------------
+            buttonRecord.Click += (s, a) => { ButtonRecordClick(); };
+            buttonStop.Click += (s, a) => { ButtonStopClick(); };
+            //-----------------------------------------------------------------------
         }
 
         #endregion
@@ -179,6 +204,8 @@
         private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem opcjeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dźwiękToolStripMenuItem;
+        private System.Windows.Forms.Button buttonRecord;
+        private System.Windows.Forms.Button buttonStop;
     }
 }
 
