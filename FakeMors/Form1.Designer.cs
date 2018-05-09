@@ -148,7 +148,8 @@
             this.buttonRecord.Size = new System.Drawing.Size(75, 23);
             this.buttonRecord.TabIndex = 9;
             this.buttonRecord.Text = "Nagrywaj";
-            this.buttonRecord.UseVisualStyleBackColor = true;         
+            this.buttonRecord.UseVisualStyleBackColor = true;
+            this.buttonRecord.Click += new System.EventHandler(this.buttonRecord_Click);
             // 
             // buttonStop
             // 
@@ -158,6 +159,7 @@
             this.buttonStop.TabIndex = 10;
             this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
             // 
             // Form1
             // 
@@ -185,10 +187,7 @@
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-            // ----------------------------------------------------------------------
-            buttonRecord.Click += (s, a) => { ButtonRecordClick(); };
-            buttonStop.Click += (s, a) => { ButtonStopClick(); };
-            //-----------------------------------------------------------------------
+
         }
 
         #endregion

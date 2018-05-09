@@ -87,16 +87,15 @@ namespace FakeMors
             soundControl.ShowDialog(this);
         }
 
-
-        public void ButtonRecordClick()
+        private void buttonRecord_Click(object sender, EventArgs e)
         {
             writer = new WaveFileWriter(outputFilePath, waveIn.WaveFormat);
             waveIn.StartRecording();
             buttonRecord.Enabled = false;
             buttonStop.Enabled = true;
-
         }
-        public void ButtonStopClick()
+
+        private void buttonStop_Click(object sender, EventArgs e)
         {
             waveIn.StopRecording();
         }
