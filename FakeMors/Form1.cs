@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NAudio.Wave;
 
+
 namespace FakeMors
 {
     public partial class Form1 : Form
@@ -28,9 +29,31 @@ namespace FakeMors
 
 
 
+        PictureBox Play = new PictureBox();
+        PictureBox Playclick = new PictureBox();
+        PictureBox Record = new PictureBox();
+        PictureBox Recordclick = new PictureBox();
+        PictureBox Stop = new PictureBox();
+        PictureBox Stopclick = new PictureBox();
+        PictureBox Right = new PictureBox();
+        PictureBox Rightclick = new PictureBox();
+        PictureBox Left = new PictureBox();
+        PictureBox Leftclick = new PictureBox();
 
         public Form1()
         {
+
+            Play.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\maleplays3x.png");
+            Playclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\maleplays4x.png");
+            Record.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\recordb.png");
+            Recordclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\recordclick.png");
+            Stop.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\stop.png");
+            Stopclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\stopclick.png");
+            Right.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\right.png");
+            Rightclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\rightclick.png");
+            Left.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\left.png");
+            Leftclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\leftclick.png");
+
             InitializeComponent();
             MorseDictionary = new MorseDictionary();
             soundData = new SoundData();
@@ -73,12 +96,13 @@ namespace FakeMors
 
         private void button2_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = MorseDictionary.ToText(richTextBox2.Text).ToUpper();
+            richTextBox1.Text = MorseDictionary.ToText(richTextBox2.Text).ToUpper();           
         }
 
         private async void ButtonPlayBeep_Click(object sender, EventArgs e)
         {
             await Beeper.MorseConsoleBeepAsync(richTextBox2.Text, soundData.Freq, soundData.DotTime);
+            
         }
 
         private void dźwiękToolStripMenuItem_Click(object sender, EventArgs e)
@@ -99,6 +123,56 @@ namespace FakeMors
         public void ButtonStopClick()
         {
             waveIn.StopRecording();
+        }
+
+        private void ButtonPlayBeep_MouseDown(object sender, MouseEventArgs e)
+        {
+            ButtonPlayBeep.Image = Playclick.Image;
+        }
+
+        private void ButtonPlayBeep_Mouseup(object sender, MouseEventArgs e)
+        {
+            ButtonPlayBeep.Image = Play.Image;
+        }
+
+        private void buttonRecord_MouseDown(object sender, MouseEventArgs e)
+        {          
+            buttonRecord.Image = Recordclick.Image;
+        }
+
+        private void buttonRecord_MouseUp(object sender, MouseEventArgs e)
+        {
+            buttonRecord.Image = Record.Image;
+        }
+
+        private void buttonStop_MouseDown(object sender, MouseEventArgs e)
+        {
+            buttonStop.Image = Stopclick.Image;
+        }
+
+        private void buttonStop_MouseUp(object sender, MouseEventArgs e)
+        {
+            buttonStop.Image = Stop.Image;
+        }
+
+        private void button1_MouseDown(object sender, MouseEventArgs e)
+        {
+            button1.Image = Rightclick.Image;
+        }
+
+        private void button1_MouseUp(object sender, MouseEventArgs e)
+        {
+            button1.Image = Right.Image;
+        }
+
+        private void button2_MouseDown(object sender, MouseEventArgs e)
+        {
+            button2.Image = Leftclick.Image;
+        }
+
+        private void button2_MouseUp(object sender, MouseEventArgs e)
+        {
+            button2.Image = Left.Image;
         }
     }
 }
