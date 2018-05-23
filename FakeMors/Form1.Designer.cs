@@ -47,67 +47,98 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(313, 165);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(310, 64);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button1.Size = new System.Drawing.Size(103, 46);
             this.button1.TabIndex = 0;
-            this.button1.Text = ">>";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
+            this.button1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button1_MouseUp);
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.Color.SteelBlue;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.richTextBox1.Location = new System.Drawing.Point(16, 64);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(281, 511);
+            this.richTextBox1.Size = new System.Drawing.Size(260, 220);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 48);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(209, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 13);
+            this.label1.Size = new System.Drawing.Size(67, 31);
             this.label1.TabIndex = 3;
             this.label1.Text = "Text";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(414, 48);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(444, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.Size = new System.Drawing.Size(89, 31);
             this.label2.TabIndex = 4;
             this.label2.Text = "Morse";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(401, 64);
+            this.richTextBox2.BackColor = System.Drawing.Color.SteelBlue;
+            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.richTextBox2.Location = new System.Drawing.Point(450, 64);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(281, 511);
+            this.richTextBox2.Size = new System.Drawing.Size(260, 220);
             this.richTextBox2.TabIndex = 5;
             this.richTextBox2.Text = "";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(310, 282);
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(310, 228);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(103, 56);
             this.button2.TabIndex = 6;
             this.button2.Text = "<<";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button2_MouseDown);
+            this.button2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button2_MouseUp);
             // 
             // ButtonPlayBeep
             // 
-            this.ButtonPlayBeep.Location = new System.Drawing.Point(310, 552);
+            this.ButtonPlayBeep.BackColor = System.Drawing.Color.White;
+            this.ButtonPlayBeep.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonPlayBeep.BackgroundImage")));
+            this.ButtonPlayBeep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonPlayBeep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ButtonPlayBeep.ImageKey = "(none)";
+            this.ButtonPlayBeep.Location = new System.Drawing.Point(310, 116);
             this.ButtonPlayBeep.Name = "ButtonPlayBeep";
-            this.ButtonPlayBeep.Size = new System.Drawing.Size(75, 23);
+            this.ButtonPlayBeep.Size = new System.Drawing.Size(103, 106);
             this.ButtonPlayBeep.TabIndex = 7;
-            this.ButtonPlayBeep.Text = "Play |>";
-            this.ButtonPlayBeep.UseVisualStyleBackColor = true;
+            this.ButtonPlayBeep.UseVisualStyleBackColor = false;
+            this.ButtonPlayBeep.BackgroundImageChanged += new System.EventHandler(this.ButtonPlayBeep_Click);
             this.ButtonPlayBeep.Click += new System.EventHandler(this.ButtonPlayBeep_Click);
+            this.ButtonPlayBeep.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ButtonPlayBeep_MouseDown);
+            this.ButtonPlayBeep.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ButtonPlayBeep_Mouseup);
             // 
             // menuStrip1
             // 
@@ -116,7 +147,7 @@
             this.opcjeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(694, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(728, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -137,34 +168,47 @@
             // dźwiękToolStripMenuItem
             // 
             this.dźwiękToolStripMenuItem.Name = "dźwiękToolStripMenuItem";
-            this.dźwiękToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.dźwiękToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dźwiękToolStripMenuItem.Text = "Dźwięk";
             this.dźwiękToolStripMenuItem.Click += new System.EventHandler(this.dźwiękToolStripMenuItem_Click);
             // 
             // buttonRecord
             // 
-            this.buttonRecord.Location = new System.Drawing.Point(141, 27);
+            this.buttonRecord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonRecord.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRecord.BackgroundImage")));
+            this.buttonRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRecord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonRecord.Image = ((System.Drawing.Image)(resources.GetObject("buttonRecord.Image")));
+            this.buttonRecord.Location = new System.Drawing.Point(16, 31);
             this.buttonRecord.Name = "buttonRecord";
-            this.buttonRecord.Size = new System.Drawing.Size(75, 23);
+            this.buttonRecord.Size = new System.Drawing.Size(37, 30);
             this.buttonRecord.TabIndex = 9;
-            this.buttonRecord.Text = "Nagrywaj";
-            this.buttonRecord.UseVisualStyleBackColor = true;         
+            this.buttonRecord.UseVisualStyleBackColor = false;
+            this.buttonRecord.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonRecord_MouseDown);
+            this.buttonRecord.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonRecord_MouseUp);
             // 
             // buttonStop
             // 
-            this.buttonStop.Location = new System.Drawing.Point(222, 27);
+            this.buttonStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonStop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonStop.BackgroundImage")));
+            this.buttonStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonStop.Image = ((System.Drawing.Image)(resources.GetObject("buttonStop.Image")));
+            this.buttonStop.Location = new System.Drawing.Point(59, 29);
             this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(75, 23);
+            this.buttonStop.Size = new System.Drawing.Size(32, 34);
             this.buttonStop.TabIndex = 10;
-            this.buttonStop.Text = "Stop";
-            this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonStop.UseVisualStyleBackColor = false;
+            this.buttonStop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonStop_MouseDown);
+            this.buttonStop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonStop_MouseUp);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(694, 587);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(728, 328);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.buttonRecord);
             this.Controls.Add(this.ButtonPlayBeep);
@@ -175,7 +219,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -185,10 +229,7 @@
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-            // ----------------------------------------------------------------------
-            buttonRecord.Click += (s, a) => { ButtonRecordClick(); };
-            buttonStop.Click += (s, a) => { ButtonStopClick(); };
-            //-----------------------------------------------------------------------
+
         }
 
         #endregion
