@@ -202,9 +202,8 @@
             this.buttonRecord.Name = "buttonRecord";
             this.buttonRecord.Size = new System.Drawing.Size(56, 46);
             this.buttonRecord.TabIndex = 9;
-            this.buttonRecord.Text = "Nagrywaj";
+            this.buttonRecord.TabStop = false;
             this.buttonRecord.UseVisualStyleBackColor = false;
-            this.buttonRecord.Click += new System.EventHandler(this.buttonRecord_Click);
             this.buttonRecord.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonRecord_MouseDown);
             this.buttonRecord.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonRecord_MouseUp);
             // 
@@ -215,14 +214,13 @@
             this.buttonStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonStop.Image = global::FakeMors.Properties.Resources.stop;
-            this.buttonStop.Location = new System.Drawing.Point(88, 45);
+            this.buttonStop.Location = new System.Drawing.Point(24, 48);
             this.buttonStop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(48, 52);
+            this.buttonStop.Size = new System.Drawing.Size(56, 46);
             this.buttonStop.TabIndex = 10;
-            this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = false;
-            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
+            this.buttonStop.Visible = false;
             this.buttonStop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonStop_MouseDown);
             this.buttonStop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonStop_MouseUp);
             // 

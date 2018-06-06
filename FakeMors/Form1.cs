@@ -62,6 +62,8 @@ namespace FakeMors
                 writer = null;
                 buttonRecord.Enabled = true;
                 buttonStop.Enabled = false;
+                buttonRecord.Visible = true;
+                buttonStop.Visible = false;
                 if (closing)
                 {
                     waveIn.Dispose();
@@ -92,19 +94,6 @@ namespace FakeMors
             soundControl.ShowDialog(this);
         }
 
-        private void buttonRecord_Click(object sender, EventArgs e)
-        {
-            writer = new WaveFileWriter(outputFilePath, waveIn.WaveFormat);
-            waveIn.StartRecording();
-            buttonRecord.Enabled = false;
-            buttonStop.Enabled = true;
-        }
-
-        private void buttonStop_Click(object sender, EventArgs e)
-        {
-            waveIn.StopRecording();
-        }
-
         private void ButtonPlayBeep_MouseDown(object sender, MouseEventArgs e)
         {
             ButtonPlayBeep.Image = Properties.Resources.maleplays4x;
@@ -122,6 +111,12 @@ namespace FakeMors
 
         private void buttonRecord_MouseUp(object sender, MouseEventArgs e)
         {
+            writer = new WaveFileWriter(outputFilePath, waveIn.WaveFormat);
+            waveIn.StartRecording();
+            buttonRecord.Enabled = false;
+            buttonStop.Enabled = true;
+            buttonRecord.Visible = false;
+            buttonStop.Visible = true;
             buttonRecord.Image = Properties.Resources.recordb;
         }
 
@@ -132,6 +127,7 @@ namespace FakeMors
 
         private void buttonStop_MouseUp(object sender, MouseEventArgs e)
         {
+            waveIn.StopRecording();
             buttonStop.Image = Properties.Resources.stop;
         }
 
@@ -161,5 +157,7 @@ namespace FakeMors
             Wykres wykres = new Wykres(arr);
             wykres.Show();
         }
+
+
     }
 }
