@@ -40,20 +40,28 @@ namespace FakeMors
         PictureBox Left = new PictureBox();
         PictureBox Leftclick = new PictureBox();
 
+        /// <summary>
+        /// Main form
+        /// </summary>
         public Form1()
         {
 
+            try // weź to kurwa napraw
+            {
+                Play.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\maleplays3x.png");
+                Playclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\maleplays4x.png");
+                Record.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\recordb.png");
+                Recordclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\recordclick.png");
+                Stop.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\stop.png");
+                Stopclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\stopclick.png");
+                Right.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\right.png");
+                Rightclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\rightclick.png");
+                Left.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\left.png");
+                Leftclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\leftclick.png");
+            }
+            catch
+            { }
 
-            Play.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\maleplays3x.png");
-            Playclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\maleplays4x.png");
-            Record.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\recordb.png");
-            Recordclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\recordclick.png");
-            Stop.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\stop.png");
-            Stopclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\stopclick.png");
-            Right.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\right.png");
-            Rightclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\rightclick.png");
-            Left.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\left.png");
-            Leftclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\leftclick.png");
 
             InitializeComponent();
             MorseDictionary = new MorseDictionary();

@@ -13,7 +13,7 @@ namespace FakeMors
     {
         public static short[] SampleIt()
         {
-            using (WaveFileReader reader = new WaveFileReader(@"C:\Users\Prezes\Desktop\NAudio\recorded.wav"))
+            using (WaveFileReader reader = new WaveFileReader(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "NAudio\\recorded.wav")))
             {
                 Assert.AreEqual(16, reader.WaveFormat.BitsPerSample, "Only works with 16 bit audio");
                 byte[] buffer = new byte[reader.Length];
