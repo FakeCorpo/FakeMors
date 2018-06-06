@@ -18,7 +18,7 @@ namespace FakeMors
 
             foreach (var item in arr)
             {
-                if (item > 100 || item < -100)
+                if (item > 500 || item < -500)
                 {
                     counter1++;
                     LastSample = item;
@@ -47,7 +47,7 @@ namespace FakeMors
                         counter2 = 0;
                     }
                 }
-                else if (LastSample > 100 || LastSample < -100)
+                else if (LastSample > 500 || LastSample < -500)
                 {
 
 

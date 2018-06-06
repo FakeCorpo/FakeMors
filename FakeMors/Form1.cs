@@ -183,26 +183,6 @@ namespace FakeMors
 
 
             short[] arr = WavWykres.SampleIt(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "NAudio\\recorded.wav"));
-
-<<<<<<< HEAD
-            Wykres wykres = new Wykres(farr);
-            Wykres2 wykres2 = new Wykres2(arr);
-
-            using (StreamWriter writetext = new StreamWriter(@"C:\Users\Juan\Desktop\NAudio\write.txt"))
-            {
-
-                foreach (var item in arr)
-                {
-                    writetext.Write(item + " ");
-                }
-                writetext.Close();
-            }
-
-            wykres.Show();
-            wykres2.Show();
-            richTextBox2.Text = Translator.Translate(arr);
-            
-=======
             short[] arr2 = WavWykres.SampleIt(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "NAudio\\filtered.wav"));
 
             for(int i = 0; i < arr2.Length; i++)
@@ -211,13 +191,13 @@ namespace FakeMors
                     arr2[i] *= 2;
             }
 
+            richTextBox2.Text = Translator.Translate(arr2);
+
             Wykres wykres = new Wykres(arr);
             Wykres2 wykres2 = new Wykres2(arr2);
             wykres.Show();
             wykres2.Show();
 
-
->>>>>>> b544de1e993310efd0a133dd532d2636d0254e0b
         }
 
 
