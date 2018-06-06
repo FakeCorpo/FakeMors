@@ -158,6 +158,7 @@ namespace FakeMors
         private void wykresikToolStripMenuItem_Click(object sender, EventArgs e)
         {
             short[] arr = WavWykres.SampleIt();
+            //arr = WavWykres.Butterworth(arr, 5000);
             Wykres wykres = new Wykres(arr);
             wykres.Show();
         }
