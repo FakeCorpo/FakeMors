@@ -195,9 +195,15 @@
             this.buttonRecord.Name = "buttonRecord";
             this.buttonRecord.Size = new System.Drawing.Size(56, 46);
             this.buttonRecord.TabIndex = 9;
+<<<<<<< HEAD
+            this.buttonRecord.Text = "Nagrywaj";
+            this.buttonRecord.UseVisualStyleBackColor = true;
+            this.buttonRecord.Click += new System.EventHandler(this.buttonRecord_Click);
+=======
             this.buttonRecord.UseVisualStyleBackColor = false;
             this.buttonRecord.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonRecord_MouseDown);
             this.buttonRecord.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonRecord_MouseUp);
+>>>>>>> 8c970db5599c28c8eb71773c1994a309c35b3de6
             // 
             // buttonStop
             // 
@@ -211,9 +217,15 @@
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(48, 52);
             this.buttonStop.TabIndex = 10;
+<<<<<<< HEAD
+            this.buttonStop.Text = "Stop";
+            this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
+=======
             this.buttonStop.UseVisualStyleBackColor = false;
             this.buttonStop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonStop_MouseDown);
             this.buttonStop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonStop_MouseUp);
+>>>>>>> 8c970db5599c28c8eb71773c1994a309c35b3de6
             // 
             // wykresikToolStripMenuItem
             // 
