@@ -28,39 +28,11 @@ namespace FakeMors
         // ----------------------------------------------------------------------------------------------------------
 
 
-
-        PictureBox Play = new PictureBox();
-        PictureBox Playclick = new PictureBox();
-        PictureBox Record = new PictureBox();
-        PictureBox Recordclick = new PictureBox();
-        PictureBox Stop = new PictureBox();
-        PictureBox Stopclick = new PictureBox();
-        PictureBox Right = new PictureBox();
-        PictureBox Rightclick = new PictureBox();
-        PictureBox Left = new PictureBox();
-        PictureBox Leftclick = new PictureBox();
-
         /// <summary>
         /// Main form
         /// </summary>
         public Form1()
         {
-
-            try // weź to kurwa napraw
-            {
-                Play.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\maleplays3x.png");
-                Playclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\maleplays4x.png");
-                Record.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\recordb.png");
-                Recordclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\recordclick.png");
-                Stop.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\stop.png");
-                Stopclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\stopclick.png");
-                Right.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\right.png");
-                Rightclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\rightclick.png");
-                Left.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\left.png");
-                Leftclick.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\leftclick.png");
-            }
-            catch
-            { }
 
 
             InitializeComponent();
@@ -135,53 +107,52 @@ namespace FakeMors
 
         private void ButtonPlayBeep_MouseDown(object sender, MouseEventArgs e)
         {
-            //ButtonPlayBeep.Image = Playclick.Image;
-            ButtonPlayBeep.Image = Properties.Resources.maleplay;
+            ButtonPlayBeep.Image = Properties.Resources.maleplays4x;
         }
 
         private void ButtonPlayBeep_Mouseup(object sender, MouseEventArgs e)
         {
-            ButtonPlayBeep.Image = Play.Image;
+            ButtonPlayBeep.Image = Properties.Resources.maleplays3x;
         }
 
         private void buttonRecord_MouseDown(object sender, MouseEventArgs e)
         {          
-            buttonRecord.Image = Recordclick.Image;
+            buttonRecord.Image = Properties.Resources.recordclick;
         }
 
         private void buttonRecord_MouseUp(object sender, MouseEventArgs e)
         {
-            buttonRecord.Image = Record.Image;
+            buttonRecord.Image = Properties.Resources.recordb;
         }
 
         private void buttonStop_MouseDown(object sender, MouseEventArgs e)
         {
-            buttonStop.Image = Stopclick.Image;
+            buttonStop.Image = Properties.Resources.stopclick;
         }
 
         private void buttonStop_MouseUp(object sender, MouseEventArgs e)
         {
-            buttonStop.Image = Stop.Image;
+            buttonStop.Image = Properties.Resources.stop;
         }
 
         private void button1_MouseDown(object sender, MouseEventArgs e)
         {
-            button1.Image = Rightclick.Image;
+            button1.Image = Properties.Resources.rightclick;
         }
 
         private void button1_MouseUp(object sender, MouseEventArgs e)
         {
-            button1.Image = Right.Image;
+            button1.Image = Properties.Resources.right;
         }
 
         private void button2_MouseDown(object sender, MouseEventArgs e)
         {
-            button2.Image = Leftclick.Image;
+            button2.Image = Properties.Resources.leftclick;
         }
 
         private void button2_MouseUp(object sender, MouseEventArgs e)
         {
-            button2.Image = Left.Image;
+            button2.Image = Properties.Resources.left;
         }
 
         private void wykresikToolStripMenuItem_Click(object sender, EventArgs e)

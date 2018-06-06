@@ -196,7 +196,7 @@
             this.buttonRecord.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRecord.BackgroundImage")));
             this.buttonRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRecord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonRecord.Image = ((System.Drawing.Image)(resources.GetObject("buttonRecord.Image")));
+            this.buttonRecord.Image = global::FakeMors.Properties.Resources.recordb;
             this.buttonRecord.Location = new System.Drawing.Point(24, 48);
             this.buttonRecord.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonRecord.Name = "buttonRecord";
@@ -214,7 +214,7 @@
             this.buttonStop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonStop.BackgroundImage")));
             this.buttonStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonStop.Image = ((System.Drawing.Image)(resources.GetObject("buttonStop.Image")));
+            this.buttonStop.Image = global::FakeMors.Properties.Resources.stop;
             this.buttonStop.Location = new System.Drawing.Point(88, 45);
             this.buttonStop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonStop.Name = "buttonStop";
