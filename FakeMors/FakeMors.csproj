@@ -86,6 +86,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SoundControl.resx">
       <DependentUpon>SoundControl.cs</DependentUpon>
@@ -109,6 +110,36 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NewFolder1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maleplays3x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maleplays4x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rightclick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftclick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recordb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recordclick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stopclick.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

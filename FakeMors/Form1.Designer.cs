@@ -40,9 +40,9 @@
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dźwiękToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wykresikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonRecord = new System.Windows.Forms.Button();
             this.buttonStop = new System.Windows.Forms.Button();
-            this.wykresikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Image = global::FakeMors.Properties.Resources.right;
             this.button1.Location = new System.Drawing.Point(465, 98);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
@@ -118,7 +118,7 @@
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Image = global::FakeMors.Properties.Resources.left;
             this.button2.Location = new System.Drawing.Point(465, 351);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
@@ -133,7 +133,7 @@
             // ButtonPlayBeep
             // 
             this.ButtonPlayBeep.BackColor = System.Drawing.Color.White;
-            this.ButtonPlayBeep.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonPlayBeep.BackgroundImage")));
+            this.ButtonPlayBeep.BackgroundImage = global::FakeMors.Properties.Resources.maleplays3x;
             this.ButtonPlayBeep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonPlayBeep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ButtonPlayBeep.ImageKey = "(none)";
@@ -179,9 +179,16 @@
             // dźwiękToolStripMenuItem
             // 
             this.dźwiękToolStripMenuItem.Name = "dźwiękToolStripMenuItem";
-            this.dźwiękToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.dźwiękToolStripMenuItem.Size = new System.Drawing.Size(167, 30);
             this.dźwiękToolStripMenuItem.Text = "Dźwięk";
             this.dźwiękToolStripMenuItem.Click += new System.EventHandler(this.dźwiękToolStripMenuItem_Click);
+            // 
+            // wykresikToolStripMenuItem
+            // 
+            this.wykresikToolStripMenuItem.Name = "wykresikToolStripMenuItem";
+            this.wykresikToolStripMenuItem.Size = new System.Drawing.Size(167, 30);
+            this.wykresikToolStripMenuItem.Text = "Wykresik";
+            this.wykresikToolStripMenuItem.Click += new System.EventHandler(this.wykresikToolStripMenuItem_Click);
             // 
             // buttonRecord
             // 
@@ -195,15 +202,11 @@
             this.buttonRecord.Name = "buttonRecord";
             this.buttonRecord.Size = new System.Drawing.Size(56, 46);
             this.buttonRecord.TabIndex = 9;
-<<<<<<< HEAD
             this.buttonRecord.Text = "Nagrywaj";
-            this.buttonRecord.UseVisualStyleBackColor = true;
-            this.buttonRecord.Click += new System.EventHandler(this.buttonRecord_Click);
-=======
             this.buttonRecord.UseVisualStyleBackColor = false;
+            this.buttonRecord.Click += new System.EventHandler(this.buttonRecord_Click);
             this.buttonRecord.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonRecord_MouseDown);
             this.buttonRecord.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonRecord_MouseUp);
->>>>>>> 8c970db5599c28c8eb71773c1994a309c35b3de6
             // 
             // buttonStop
             // 
@@ -217,22 +220,11 @@
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(48, 52);
             this.buttonStop.TabIndex = 10;
-<<<<<<< HEAD
             this.buttonStop.Text = "Stop";
-            this.buttonStop.UseVisualStyleBackColor = true;
-            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
-=======
             this.buttonStop.UseVisualStyleBackColor = false;
+            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
             this.buttonStop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonStop_MouseDown);
             this.buttonStop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonStop_MouseUp);
->>>>>>> 8c970db5599c28c8eb71773c1994a309c35b3de6
-            // 
-            // wykresikToolStripMenuItem
-            // 
-            this.wykresikToolStripMenuItem.Name = "wykresikToolStripMenuItem";
-            this.wykresikToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
-            this.wykresikToolStripMenuItem.Text = "Wykresik";
-            this.wykresikToolStripMenuItem.Click += new System.EventHandler(this.wykresikToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -263,9 +255,6 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-
-            buttonRecord.Click += (s, a) => { ButtonRecordClick(); };
-            buttonStop.Click += (s, a) => { ButtonStopClick(); };
         }
 
         #endregion
