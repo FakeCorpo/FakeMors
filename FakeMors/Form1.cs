@@ -45,6 +45,7 @@ namespace FakeMors
         /// </summary>
         public Form1()
         {
+
             try // weź to kurwa napraw
             {
                 Play.Image = Image.FromFile(@"D:\Studia\Semestr 6\Sm\maleplays3x.png");
@@ -60,7 +61,7 @@ namespace FakeMors
             }
             catch
             { }
-            
+
 
             InitializeComponent();
             MorseDictionary = new MorseDictionary();
@@ -134,7 +135,8 @@ namespace FakeMors
 
         private void ButtonPlayBeep_MouseDown(object sender, MouseEventArgs e)
         {
-            ButtonPlayBeep.Image = Playclick.Image;
+            //ButtonPlayBeep.Image = Playclick.Image;
+            ButtonPlayBeep.Image = Properties.Resources.maleplay;
         }
 
         private void ButtonPlayBeep_Mouseup(object sender, MouseEventArgs e)
@@ -180,6 +182,13 @@ namespace FakeMors
         private void button2_MouseUp(object sender, MouseEventArgs e)
         {
             button2.Image = Left.Image;
+        }
+
+        private void wykresikToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            short[] arr = WavWykres.SampleIt();
+            Wykres wykres = new Wykres(arr);
+            wykres.Show();
         }
     }
 }
