@@ -25,6 +25,7 @@ namespace FakeMors
         private WaveFileWriter writer;
         private WaveInEvent waveIn;
         private bool closing;
+
         // ----------------------------------------------------------------------------------------------------------
 
 
@@ -36,6 +37,7 @@ namespace FakeMors
 
 
             InitializeComponent();
+                        
             MorseDictionary = new MorseDictionary();
             soundData = new SoundData();
 
@@ -153,11 +155,36 @@ namespace FakeMors
 
         private void wykresikToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            short[] arr = WavWykres.SampleIt();
-            float[] farr;
+            
+            outputFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "NAudio");
+            outputFilePath = Path.Combine(outputFolder, "recorded.wav");
 
-            farr = WavWykres.filter(arr);
+            float[] arrL;
+            float[] arrR;
 
+            
+            WavWykres.readWav(outputFilePath, out arrL, out arrR);
+            float[] farr = new float[arrL.Length];
+            int[] w = new int[arrL.Length];
+           
+
+
+            farr = WavWykres.filter(arrL);
+
+            WaveFormat waveFormat = new WaveFormat(8000, 1);
+
+            outputFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "NAudio");
+            outputFilePath = Path.Combine(outputFolder, "filtered.wav");
+
+            using (WaveFileWriter writer = new WaveFileWriter(outputFilePath, waveFormat))
+            {
+                writer.WriteSamples(farr, 0, farr.Length);
+            }
+
+
+            short[] arr = WavWykres.SampleIt(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "NAudio\\recorded.wav"));
+
+<<<<<<< HEAD
             Wykres wykres = new Wykres(farr);
             Wykres2 wykres2 = new Wykres2(arr);
 
@@ -175,6 +202,22 @@ namespace FakeMors
             wykres2.Show();
             richTextBox2.Text = Translator.Translate(arr);
             
+=======
+            short[] arr2 = WavWykres.SampleIt(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "NAudio\\filtered.wav"));
+
+            for(int i = 0; i < arr2.Length; i++)
+            {
+                if (Math.Abs(arr2[i]) > 400)
+                    arr2[i] *= 2;
+            }
+
+            Wykres wykres = new Wykres(arr);
+            Wykres2 wykres2 = new Wykres2(arr2);
+            wykres.Show();
+            wykres2.Show();
+
+
+>>>>>>> b544de1e993310efd0a133dd532d2636d0254e0b
         }
 
 
