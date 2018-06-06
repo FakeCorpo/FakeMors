@@ -10,6 +10,7 @@ namespace FakeMors
     {
         public static string Translate(short[] arr)
         {
+            int index = 0;
             char LastChar = ' ';
             string MorseMessage = "";
             int counter1 = 0;
@@ -18,90 +19,106 @@ namespace FakeMors
 
             foreach (var item in arr)
             {
-                if (item > 500 || item < -500)
+                if (index > 80)
                 {
-                    counter1++;
-                    LastSample = item;
-
-                    if (counter2 > 100)
+                    if (item > 500 || item < -500)
                     {
-                        if (LastChar == '-')
-                        {
-                            if (counter2 > 8000)
-                            {
-                                MorseMessage += "   ";
-                            }
-                            else if (counter2 > 5000)
-                            {
-                                MorseMessage += " ";
-                            }
-                        }
-                        if (LastChar == '.')
-                        {
-                            if (counter2 > 3500)
-                            {
-                                MorseMessage += " ";
-                            }
-                        }
+                        counter1++;
+                        LastSample = item;
 
-                        counter2 = 0;
+                        if (counter2 > 100)
+                        {
+                            if (LastChar == '-')
+                            {
+                                if (counter2 > 8000)
+                                {
+                                    MorseMessage += "   ";
+                                }
+                                else if (counter2 > 5000)
+                                {
+                                    MorseMessage += " ";
+                                }
+                            }
+
+                            if (LastChar == '.')
+                            {
+                                if (counter2 > 3500)
+                                {
+                                    MorseMessage += " ";
+                                }
+                            }
+
+                            counter2 = 0;
+                        }
                     }
-                }
-                else if (LastSample > 500 || LastSample < -500)
-                {
-
-
-                    counter1++;
-                    LastSample = item;
-
-                    if (counter2 > 100)
+                    else if (arr[index - 1] > 500 || arr[index - 2] > 500 || arr[index - 3] > 500 ||
+                             arr[index - 4] > 500 || arr[index - 5] > 500
+                             || arr[index - 6] > 500 || arr[index - 7] > 500 || arr[index - 8] > 500 ||
+                             arr[index - 9] > 500 || arr[index - 10] > 500
+                             || arr[index - 1] < -500 || arr[index - 2] < -500 || arr[index - 3] < -500 ||
+                             arr[index - 4] < -500 || arr[index - 5] < -500 ||
+                             arr[index - 6] < -500 || arr[index - 7] < -500 || arr[index - 8] < -500 ||
+                             arr[index - 9] < -500 || arr[index - 10] < -500)
                     {
-                        if (LastChar == '-')
+
+
+                        counter1++;
+                        LastSample = item;
+
+                        if (counter2 > 100)
                         {
-                            if (counter2 > 8000)
+                            if (LastChar == '-')
                             {
-                                MorseMessage += "   ";
+                                if (counter2 > 8000)
+                                {
+                                    MorseMessage += "   ";
+                                }
+                                else if (counter2 > 5000)
+                                {
+                                    MorseMessage += " ";
+                                }
                             }
-                            else if (counter2 > 5000)
+
+                            if (LastChar == '.')
                             {
-                                MorseMessage += " ";
+                                if (counter2 > 3500)
+                                {
+                                    MorseMessage += " ";
+                                }
                             }
-                        }
-                        if (LastChar == '.')
-                        {
-                            if (counter2 > 3500)
-                            {
-                                MorseMessage += " ";
-                            }
+
+                            counter2 = 0;
                         }
 
-                        counter2 = 0;
+
+
                     }
-
-
-
-                }
-                else
-                {
-                    counter2++;
-
-
-                    if (counter1 > 100)
+                    else
                     {
-                        if (counter1 < 1000)
+                        counter2++;
+
+
+                        if (counter1 > 100)
                         {
-                            MorseMessage += ".";
-                            LastChar = '.';
+                            if (counter1 < 1000)
+                            {
+                                MorseMessage += ".";
+                                LastChar = '.';
+                            }
+                            else if (counter1 > 1000)
+                            {
+                                MorseMessage += "-";
+                                LastChar = '-';
+                            }
+
+                            counter1 = 0;
                         }
-                        else if (counter1 > 1000)
-                        {
-                            MorseMessage += "-";
-                            LastChar = '-';
-                        }
-                        counter1 = 0;
+
                     }
 
                 }
+
+                index++;
             }
             return MorseMessage;
         }
