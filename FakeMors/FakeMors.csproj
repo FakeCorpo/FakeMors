@@ -141,5 +141,8 @@
   <ItemGroup>
     <None Include="Resources\stopclick.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tło.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
