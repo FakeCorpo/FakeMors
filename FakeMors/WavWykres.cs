@@ -97,15 +97,17 @@ namespace FakeMors
 
         public static float[] filter(short[] data)
         {
-            var filter = new BiQuadFilter[1];
+            var filter = new BiQuadFilter[2];
 
-            filter[0] = BiQuadFilter.HighPassFilter(sampleRate, 50, 1);
+            filter[0] = BiQuadFilter.HighPassFilter(sampleRate, 800, 1);
+            filter[1] = BiQuadFilter.LowPassFilter(sampleRate, 5000, 1);
 
             float[] fdata = new float[data.Length];
 
             for (int i = 0; i < data.Length; i++)
             {
                 fdata[i] = filter[0].Transform(data[i]);
+                fdata[i] = filter[1].Transform(data[i]);
             }
 
             return fdata;
