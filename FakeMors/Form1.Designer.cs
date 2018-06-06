@@ -185,7 +185,7 @@
             // buttonRecord
             // 
             this.buttonRecord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonRecord.BackgroundImage = global::FakeMors.Properties.Resources.tło;
+            this.buttonRecord.BackgroundImage = global::FakeMors.Properties.Resources.background;
             this.buttonRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRecord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonRecord.Image = global::FakeMors.Properties.Resources.recordb;
@@ -193,11 +193,8 @@
             this.buttonRecord.Name = "buttonRecord";
             this.buttonRecord.Size = new System.Drawing.Size(37, 30);
             this.buttonRecord.TabIndex = 9;
-<<<<<<< HEAD
-=======
-            this.buttonRecord.TabStop = false;
->>>>>>> 818ee702af26240af9675d03a5395d23a6ca73d1
             this.buttonRecord.UseVisualStyleBackColor = false;
+
             this.buttonRecord.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonRecord_MouseDown);
             this.buttonRecord.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonRecord_MouseUp);
             // 
@@ -208,19 +205,11 @@
             this.buttonStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonStop.Image = global::FakeMors.Properties.Resources.stop;
-<<<<<<< HEAD
             this.buttonStop.Location = new System.Drawing.Point(59, 29);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(32, 34);
-=======
-            this.buttonStop.Location = new System.Drawing.Point(24, 48);
-            this.buttonStop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(56, 46);
->>>>>>> 818ee702af26240af9675d03a5395d23a6ca73d1
             this.buttonStop.TabIndex = 10;
             this.buttonStop.UseVisualStyleBackColor = false;
-            this.buttonStop.Visible = false;
             this.buttonStop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonStop_MouseDown);
             this.buttonStop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonStop_MouseUp);
             // 
