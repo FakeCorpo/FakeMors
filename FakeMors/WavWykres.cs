@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NAudio.Wave;
+using NAudio.Dsp;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,9 +12,10 @@ namespace FakeMors
 {
     class WavWykres
     {
-        private static double sampleRate = 0;
+        private static float sampleRate;
         public static short[] SampleIt()
         {
+            float kupa = 16415;
             using (WaveFileReader reader = new WaveFileReader(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "NAudio\\recorded.wav")))
             {
                 Assert.AreEqual(16, reader.WaveFormat.BitsPerSample, "Only works with 16 bit audio");
@@ -21,7 +23,8 @@ namespace FakeMors
                 int read = reader.Read(buffer, 0, buffer.Length);
                 short[] sampleBuffer = new short[read / 2];
                 Buffer.BlockCopy(buffer, 0, sampleBuffer, 0, read);
-                sampleRate = reader.WaveFormat.SampleRate;
+                sampleRate = kupa;
+ 
                 return sampleBuffer;
             }
             return null;
@@ -90,6 +93,22 @@ namespace FakeMors
             }
 
             return data;
+        }
+
+        public static float[] filter(short[] data)
+        {
+            var filter = new BiQuadFilter[1];
+
+            filter[0] = BiQuadFilter.HighPassFilter(sampleRate, 50, 1);
+
+            float[] fdata = new float[data.Length];
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                fdata[i] = filter[0].Transform(data[i]);
+            }
+
+            return fdata;
         }
 
     }

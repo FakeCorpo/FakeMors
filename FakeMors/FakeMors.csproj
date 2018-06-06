@@ -75,6 +75,12 @@
     <Compile Include="Wykres.Designer.cs">
       <DependentUpon>Wykres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Wykres2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wykres2.Designer.cs">
+      <DependentUpon>Wykres2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Wykres.resx">
       <DependentUpon>Wykres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wykres2.resx">
+      <DependentUpon>Wykres2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

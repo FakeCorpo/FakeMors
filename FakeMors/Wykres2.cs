@@ -10,27 +10,17 @@ using System.Windows.Forms;
 
 namespace FakeMors
 {
-    public partial class Wykres : Form
+    public partial class Wykres2 : Form
     {
-        short[] data;
-        
-
-        /// <summary>
-        /// kurwa chuj
-        /// </summary>
-        /// <param name="arr"></param>
-        public Wykres(float[] arr)
+        public Wykres2(short[] arr)
         {
-            //data = arr;
             InitializeComponent();
-            
+
             chart1.Series.Add("Wykres");
             for (int i = 0; i < arr.Length; i++)
             {
-                chart1.Series[0].Points.AddY(Math.Ceiling(arr[i]));
+                chart1.Series[0].Points.AddY(arr[i]);
             }
-            
-   
         }
     }
 }
