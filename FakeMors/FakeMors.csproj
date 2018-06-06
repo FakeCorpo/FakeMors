@@ -68,6 +68,7 @@
       <DependentUpon>SoundControl.cs</DependentUpon>
     </Compile>
     <Compile Include="SoundData.cs" />
+    <Compile Include="Translator.cs" />
     <Compile Include="WavWykres.cs" />
     <Compile Include="Wykres.cs">
       <SubType>Form</SubType>

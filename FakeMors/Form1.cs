@@ -79,13 +79,13 @@ namespace FakeMors
 
         private void button2_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = MorseDictionary.ToText(richTextBox2.Text).ToUpper();           
+            richTextBox1.Text = MorseDictionary.ToText(richTextBox2.Text).ToUpper();
         }
 
         private async void ButtonPlayBeep_Click(object sender, EventArgs e)
         {
             await Beeper.MorseConsoleBeepAsync(richTextBox2.Text, soundData.Freq, soundData.DotTime);
-            
+
         }
 
         private void dźwiękToolStripMenuItem_Click(object sender, EventArgs e)
@@ -105,7 +105,7 @@ namespace FakeMors
         }
 
         private void buttonRecord_MouseDown(object sender, MouseEventArgs e)
-        {          
+        {
             buttonRecord.Image = Properties.Resources.recordclick;
         }
 
@@ -160,8 +160,21 @@ namespace FakeMors
 
             Wykres wykres = new Wykres(farr);
             Wykres2 wykres2 = new Wykres2(arr);
+
+            using (StreamWriter writetext = new StreamWriter(@"C:\Users\Juan\Desktop\NAudio\write.txt"))
+            {
+
+                foreach (var item in arr)
+                {
+                    writetext.Write(item + " ");
+                }
+                writetext.Close();
+            }
+
             wykres.Show();
             wykres2.Show();
+            richTextBox2.Text = Translator.Translate(arr);
+            
         }
 
 
