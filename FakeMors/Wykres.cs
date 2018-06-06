@@ -19,7 +19,7 @@ namespace FakeMors
         /// kurwa chuj
         /// </summary>
         /// <param name="arr"></param>
-        public Wykres(float[] arr)
+        public Wykres(short[] arr)
         {
             //data = arr;
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace FakeMors
             chart1.Series.Add("Wykres");
             for (int i = 0; i < arr.Length; i++)
             {
-                chart1.Series[0].Points.AddY(Math.Ceiling(arr[i]));
+                chart1.Series[0].Points.AddY(arr[i]);
             }
             
    
