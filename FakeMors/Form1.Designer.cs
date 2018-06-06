@@ -193,7 +193,7 @@
             // buttonRecord
             // 
             this.buttonRecord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonRecord.BackgroundImage = global::FakeMors.Properties.Resources.tło;
+            this.buttonRecord.BackgroundImage = global::FakeMors.Properties.Resources.background;
             this.buttonRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRecord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonRecord.Image = global::FakeMors.Properties.Resources.recordb;
@@ -211,7 +211,7 @@
             // buttonStop
             // 
             this.buttonStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonStop.BackgroundImage = global::FakeMors.Properties.Resources.tło;
+            this.buttonStop.BackgroundImage = global::FakeMors.Properties.Resources.background;
             this.buttonStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonStop.Image = global::FakeMors.Properties.Resources.stop;
