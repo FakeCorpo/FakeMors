@@ -25,7 +25,9 @@ namespace FakeMors
         private WaveFileWriter writer;
         private WaveInEvent waveIn;
         private bool closing;
-
+        private FolderBrowserDialog fdb = new FolderBrowserDialog();
+        private bool path = false;
+        private bool save = false;
         // ----------------------------------------------------------------------------------------------------------
 
 
@@ -113,12 +115,18 @@ namespace FakeMors
 
         private void buttonRecord_MouseUp(object sender, MouseEventArgs e)
         {
-            writer = new WaveFileWriter(outputFilePath, waveIn.WaveFormat);
-            waveIn.StartRecording();
-            buttonRecord.Enabled = false;
-            buttonStop.Enabled = true;
-            buttonRecord.Visible = false;
-            buttonStop.Visible = true;
+            if (path)
+            {
+                writer = new WaveFileWriter(outputFilePath, waveIn.WaveFormat);
+                waveIn.StartRecording();
+                buttonRecord.Enabled = false;
+                buttonStop.Enabled = true;
+                buttonRecord.Visible = false;
+                buttonStop.Visible = true;
+                save = true;
+            }
+            else
+                MessageBox.Show("Wybierz ścieżkę zapisu!");
             buttonRecord.Image = Properties.Resources.recordb;
         }
 
@@ -141,6 +149,17 @@ namespace FakeMors
         private void button1_MouseUp(object sender, MouseEventArgs e)
         {
             button1.Image = Properties.Resources.right;
+
+        }
+
+        private void wybierzŚcieżkęZapisuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (fdb.ShowDialog() == DialogResult.OK)
+            {
+                outputFolder = fdb.SelectedPath;
+                outputFilePath = Path.Combine(outputFolder, "recorded.wav");
+                path = true;
+            }
         }
 
         private void button2_MouseDown(object sender, MouseEventArgs e)
@@ -155,9 +174,11 @@ namespace FakeMors
 
         private void wykresikToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            outputFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "NAudio");
-            outputFilePath = Path.Combine(outputFolder, "recorded.wav");
+
+            if (save)
+            {
+
+
 
             float[] arrL;
             float[] arrR;
@@ -173,17 +194,14 @@ namespace FakeMors
 
             WaveFormat waveFormat = new WaveFormat(8000, 1);
 
-            outputFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "NAudio");
-            outputFilePath = Path.Combine(outputFolder, "filtered.wav");
-
             using (WaveFileWriter writer = new WaveFileWriter(outputFilePath, waveFormat))
             {
                 writer.WriteSamples(farr, 0, farr.Length);
             }
 
 
-            short[] arr = WavWykres.SampleIt(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "NAudio\\recorded.wav"));
-            short[] arr2 = WavWykres.SampleIt(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "NAudio\\filtered.wav"));
+            short[] arr = WavWykres.SampleIt(outputFolder);
+            short[] arr2 = WavWykres.SampleIt(outputFolder);
 
             for(int i = 0; i < arr2.Length; i++)
             {
@@ -198,8 +216,11 @@ namespace FakeMors
             wykres.Show();
             wykres2.Show();
 
-        }
 
+            }
+            else
+                MessageBox.Show("Nagraj coś!");
+        }
 
     }
 }

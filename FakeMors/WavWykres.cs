@@ -16,7 +16,7 @@ namespace FakeMors
         public static short[] SampleIt(string path)
         {
             float kupa = 8000;
-            using (WaveFileReader reader = new WaveFileReader(path))
+            using (WaveFileReader reader = new WaveFileReader(path + "\\recorded.wav"))
             {
                 Assert.AreEqual(16, reader.WaveFormat.BitsPerSample, "Only works with 16 bit audio");
                 byte[] buffer = new byte[reader.Length];
