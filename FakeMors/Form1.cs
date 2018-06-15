@@ -27,7 +27,6 @@ namespace FakeMors
         private bool closing;
         private FolderBrowserDialog fdb = new FolderBrowserDialog();
         private bool path = false;
-        private bool save = false;
         // ----------------------------------------------------------------------------------------------------------
 
 
@@ -123,7 +122,8 @@ namespace FakeMors
                 buttonStop.Enabled = true;
                 buttonRecord.Visible = false;
                 buttonStop.Visible = true;
-                save = true;
+                wykresikToolStripMenuItem.Enabled = true;
+                tłumaczToolStripMenuItem.Enabled = true;
             }
             else
                 MessageBox.Show("Wybierz ścieżkę zapisu!");
@@ -174,12 +174,6 @@ namespace FakeMors
 
         private void wykresikToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            if (save)
-            {
-
-
-
             float[] arrL;
             float[] arrR;
 
@@ -209,18 +203,47 @@ namespace FakeMors
                     arr2[i] *= 2;
             }
 
-            richTextBox2.Text = Translator.Translate(arr2);
-
             Wykres wykres = new Wykres(arr);
             Wykres2 wykres2 = new Wykres2(arr2);
             wykres.Show();
             wykres2.Show();
 
 
-            }
-            else
-                MessageBox.Show("Nagraj coś!");
         }
 
+        private void tłumaczToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                float[] arrL;
+                float[] arrR;
+
+
+                WavWykres.readWav(outputFilePath, out arrL, out arrR);
+                float[] farr = new float[arrL.Length];
+                int[] w = new int[arrL.Length];
+
+
+
+                farr = WavWykres.filter(arrL);
+
+                WaveFormat waveFormat = new WaveFormat(8000, 1);
+
+                using (WaveFileWriter writer = new WaveFileWriter(outputFilePath, waveFormat))
+                {
+                    writer.WriteSamples(farr, 0, farr.Length);
+                }
+
+
+                short[] arr = WavWykres.SampleIt(outputFolder);
+                short[] arr2 = WavWykres.SampleIt(outputFolder);
+
+                for (int i = 0; i < arr2.Length; i++)
+                {
+                    if (Math.Abs(arr2[i]) > 400)
+                        arr2[i] *= 2;
+                }
+
+                richTextBox2.Text = Translator.Translate(arr2);
+
+        }
     }
 }
