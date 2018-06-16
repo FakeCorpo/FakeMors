@@ -13,20 +13,33 @@ namespace FakeMors
     class WavWykres
     {
         private static float sampleRate = 8000;
-        public static short[] SampleIt(string path)
+        public static short[] SampleIt(string path, bool filtered = false)
         {
             float kupa = 8000;
-            using (WaveFileReader reader = new WaveFileReader(path + "\\recorded.wav"))
-            {
-                Assert.AreEqual(16, reader.WaveFormat.BitsPerSample, "Only works with 16 bit audio");
-                byte[] buffer = new byte[reader.Length];
-                int read = reader.Read(buffer, 0, buffer.Length);
-                short[] sampleBuffer = new short[read / 2];
-                Buffer.BlockCopy(buffer, 0, sampleBuffer, 0, read);
-                sampleRate = kupa;
+            if(filtered)
+                using (WaveFileReader reader = new WaveFileReader(path + "\\filtered.wav"))
+                {
+                    Assert.AreEqual(16, reader.WaveFormat.BitsPerSample, "Only works with 16 bit audio");
+                    byte[] buffer = new byte[reader.Length];
+                    int read = reader.Read(buffer, 0, buffer.Length);
+                    short[] sampleBuffer = new short[read / 2];
+                    Buffer.BlockCopy(buffer, 0, sampleBuffer, 0, read);
+                    sampleRate = kupa;
 
-                return sampleBuffer;
-            }
+                    return sampleBuffer;
+                }
+            else
+                using (WaveFileReader reader = new WaveFileReader(path + "\\recorded.wav"))
+                {
+                    Assert.AreEqual(16, reader.WaveFormat.BitsPerSample, "Only works with 16 bit audio");
+                    byte[] buffer = new byte[reader.Length];
+                    int read = reader.Read(buffer, 0, buffer.Length);
+                    short[] sampleBuffer = new short[read / 2];
+                    Buffer.BlockCopy(buffer, 0, sampleBuffer, 0, read);
+                    sampleRate = kupa;
+
+                    return sampleBuffer;
+                }
             return null;
         }
 

@@ -22,6 +22,7 @@ namespace FakeMors
         // ----------------------------------------------------------------------------------------------------------
         private string outputFolder;
         private string outputFilePath;
+        private string outputFilteredFilePath;
         private WaveFileWriter writer;
         private WaveInEvent waveIn;
         private bool closing;
@@ -46,6 +47,7 @@ namespace FakeMors
             outputFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "NAudio");
             Directory.CreateDirectory(outputFolder);
             outputFilePath = Path.Combine(outputFolder, "recorded.wav");
+            outputFilteredFilePath = Path.Combine(outputFolder, "filtered.wav");
             writer = null;
             closing = false;
             waveIn = new WaveInEvent();
@@ -158,6 +160,7 @@ namespace FakeMors
             {
                 outputFolder = fdb.SelectedPath;
                 outputFilePath = Path.Combine(outputFolder, "recorded.wav");
+                outputFilteredFilePath = Path.Combine(outputFolder, "filtered.wav");
                 path = true;
             }
         }
@@ -188,14 +191,14 @@ namespace FakeMors
 
             WaveFormat waveFormat = new WaveFormat(8000, 1);
 
-            using (WaveFileWriter writer = new WaveFileWriter(outputFilePath, waveFormat))
+            using (WaveFileWriter writer = new WaveFileWriter(outputFilteredFilePath, waveFormat))
             {
                 writer.WriteSamples(farr, 0, farr.Length);
             }
 
 
             short[] arr = WavWykres.SampleIt(outputFolder);
-            short[] arr2 = WavWykres.SampleIt(outputFolder);
+            short[] arr2 = WavWykres.SampleIt(outputFolder, true);
 
             for(int i = 0; i < arr2.Length; i++)
             {
@@ -234,7 +237,7 @@ namespace FakeMors
 
 
                 short[] arr = WavWykres.SampleIt(outputFolder);
-                short[] arr2 = WavWykres.SampleIt(outputFolder);
+                short[] arr2 = WavWykres.SampleIt(outputFolder, true);
 
                 for (int i = 0; i < arr2.Length; i++)
                 {
