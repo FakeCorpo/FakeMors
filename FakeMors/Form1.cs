@@ -177,6 +177,9 @@ namespace FakeMors
 
         private void wykresikToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            if (File.Exists(outputFilePath))
+            {
             float[] arrL;
             float[] arrR;
 
@@ -210,12 +213,20 @@ namespace FakeMors
             Wykres2 wykres2 = new Wykres2(arr2);
             wykres.Show();
             wykres2.Show();
+        }
+            else
+                MessageBox.Show("Plik zniknął z katalogu!");
 
 
         }
 
         private void tłumaczToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+
+
+            if (File.Exists(outputFilePath))
+            {
                 float[] arrL;
                 float[] arrR;
 
@@ -230,7 +241,7 @@ namespace FakeMors
 
                 WaveFormat waveFormat = new WaveFormat(8000, 1);
 
-                using (WaveFileWriter writer = new WaveFileWriter(outputFilePath, waveFormat))
+                using (WaveFileWriter writer = new WaveFileWriter(outputFilteredFilePath, waveFormat))
                 {
                     writer.WriteSamples(farr, 0, farr.Length);
                 }
@@ -246,7 +257,9 @@ namespace FakeMors
                 }
 
                 richTextBox2.Text = Translator.Translate(arr2);
-
+            }
+            else
+                MessageBox.Show("Plik zniknął z katalogu!");
         }
     }
 }
